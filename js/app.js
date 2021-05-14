@@ -50,7 +50,7 @@ let displayRestaurants = (allPlaces) => {
     })
      displayAllModals = allPlaces.map(function(place){
         return `
-        <img src="${place.img}" width="500px"><span class="close">&times;</span>
+        <img src="${place.img}" width="500px"><span class="close" id="close">&times;</span>
         <div class="placeInfo">
             <p class="name">${place.name}/p>
             <p class="location">Location: ${place.location}</p>
@@ -65,8 +65,13 @@ let displayRestaurants = (allPlaces) => {
 }
 
 places.addEventListener('click', function(e){
-    console.log('reading the click')
+    console.log(e.target.id)
     modal.innerHTML = displayAllModals[e.target.id];
     console.log(modal);
     modal.style.display = 'block';
+})
+modal.addEventListener('click', function(e){
+    if(e.target.id == 'close'){
+        modal.style.display = 'none';
+    }
 })
