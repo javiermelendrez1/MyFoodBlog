@@ -11,6 +11,7 @@
 .place {
     width: 33%;
     text-align: center;
+    margin-bottom: 10px;
 }
 .placeModal {
     /* display: none; */
@@ -28,4 +29,9 @@
     position: absolute;
     top: 0;
     left: 0;
+    color: red;
+}
+.sort-buttons {
+    text-align: center;
+    margin-bottom: 10px;
 }
