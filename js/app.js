@@ -35,10 +35,25 @@ let displayRestaurants = (allPlaces) => {
 }
 
 places.addEventListener('click', function(e){
-    console.log(e.target.id)
-    modal.innerHTML = displayAllModals[e.target.id];
-    console.log(modal);
+    // console.log(e.target.id)
+    // modal.innerHTML = displayAllModals[e.target.id];
+    // console.log(modal);
     modal.style.display = 'block';
+    // working on alternative solution
+    for(let a of globalArray){
+        if(e.target.id == a.id){
+            modal.innerHTML = `
+            <img src="${a.img}" width="500px"><span class="close" id="close">&times;</span>
+            <div class="placeInfo">
+                <p class="name">${a.name}/p>
+                <p class="location">Location: ${a.location}</p>
+                <p class="parking">Parking: ${a.parking}</p>
+                <p class="menuItemsHad">Menu Item Had: ${a.menuItemsHad}</p>
+                <p class="rating">Rating: ${a.rating}</p>
+            </div>
+        </div>`;
+        }
+    }
 })
 modal.addEventListener('click', function(e){
     if(e.target.id == 'close'){

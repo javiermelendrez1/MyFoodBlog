@@ -26,7 +26,7 @@ for (let s of sort){
         }
     })
 }
-
+let globalArray = [];
 //sort method 1 
 //highest to lowest 
 //step 1 get all ratings from restaurants.rating and store them in an array 
@@ -35,6 +35,7 @@ const sortHighToLow = () => {
     let theArray = restaurants.sort(function(a,b){ 
         return b.rating - a.rating;
     });
+    globalArray = theArray;
     return theArray;
 }
 
@@ -42,6 +43,8 @@ const sortLowToHigh = () => {
     let theArray = restaurants.sort(function(a,b){ 
         return a.rating - b.rating;
     });
+    globalArray = theArray;
+
     return theArray;
 
 }
@@ -50,6 +53,8 @@ const sortNewtoOld = () => {
     let theArray = restaurants.sort(function(a,b){ 
         return a.id - b.id;
     });
+    globalArray = theArray;
+
     return theArray;
 
 }
@@ -58,6 +63,8 @@ const sortOldtoNew = () => {
     let theArray = restaurants.sort(function(a,b){ 
         return b.id - a.id;
     });
+    globalArray = theArray;
+
     return theArray;
 
 }
