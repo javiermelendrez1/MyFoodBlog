@@ -6,23 +6,22 @@ for (let s of sort){
     s.addEventListener('click', (e) =>{
         console.log(e.target.id);
         if(e.target.id == 'high'){
-            console.log(e.target.id);
-
-            sortHighToLow();
+            displayRestaurants(sortHighToLow());
             console.log('sorting from highest rating to lowest');
         } else if (e.target.id == 'low'){
-            console.log(e.target.id);
+            displayRestaurants(sortLowToHigh());
 
-            sortLowToHigh();
             console.log('sorting from lowest rating to highest');
         } else if (e.target.id == 'new'){
-            sortNewtoOld();
+            displayRestaurants(sortNewtoOld());
+
+            
             // console.log(e.target.id);
             console.log('sorting from newest to oldest');
 
         } else if (e.target.id == 'old') {
-            sortOldtoNew();
-            console.log(e.target.id);
+            displayRestaurants(sortOldtoNew());
+
             console.log('sorting from oldest to newest');
         }
     })
@@ -33,37 +32,32 @@ for (let s of sort){
 //step 1 get all ratings from restaurants.rating and store them in an array 
 //step 2 sort the array
 const sortHighToLow = () => {
-    let theArray = restaurants.map( r => r.rating);
-    theArray.sort(function(a,b){ 
-        return b - a;
+    let theArray = restaurants.sort(function(a,b){ 
+        return b.rating - a.rating;
     });
-    console.log(theArray);
-
+    return theArray;
 }
 
 const sortLowToHigh = () => {
-    let theArray = restaurants.map( r => r.rating);
-    theArray.sort(function(a,b){ 
-        return a - b;
+    let theArray = restaurants.sort(function(a,b){ 
+        return a.rating - b.rating;
     });
-    console.log(theArray);
+    return theArray;
 
 }
 
 const sortNewtoOld = () => {
-    let c = restaurants.map( r => r.id);
-    c.sort(function(a,b){ 
-        return a - b;
+    let theArray = restaurants.sort(function(a,b){ 
+        return a.id - b.id;
     });
-    console.log(c);
+    return theArray;
 
 }
 
 const sortOldtoNew = () => {
-    let d = restaurants.map( r => r.id);
-    d.sort(function(a,b){ 
-        return b - a;
+    let theArray = restaurants.sort(function(a,b){ 
+        return b.id - a.id;
     });
-    console.log(d);
+    return theArray;
 
 }

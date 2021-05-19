@@ -5,7 +5,7 @@ const restaurants = [{
     location: 'Long Beach',
     parking: 'Yes',
     menuItemsHad: 'Brisket Burger',
-    rating: '1'
+    rating: '10'
 },
 {
     id: 1,
